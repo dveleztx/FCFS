@@ -9,7 +9,7 @@ public interface Algorithm
     /**
      * Invokes the scheduler
      */
-    public abstract void schedule();
+    public abstract void schedule() throws InterruptedException;
 
     /**
      * Selects the next task using the appropriate scheduling algorithm

@@ -18,7 +18,7 @@ import java.io.*;
 
 public class Driver
 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         if (args.length != 2) {
             System.err.println("Usage: java Driver <algorithm> <schedule>");
             System.exit(0);

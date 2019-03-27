@@ -10,7 +10,7 @@ public class FCFS implements Algorithm {
     }
 
     @Override
-    public void schedule() {
+    public void schedule() throws InterruptedException {
 
         // Current task
         Task current = null;
@@ -30,6 +30,8 @@ public class FCFS implements Algorithm {
         for (int i = 0; i < queuedTasks.size(); ) {
             current = pickNextTask();
             cpurunner.run(current, current.getTid());
+            Thread.sleep(current.getBurst());
+            System.out.println("Task " + current.getName() + " finished.\n");
             queuedTasks.remove();
         }
     }
