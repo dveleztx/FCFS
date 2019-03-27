@@ -1,15 +1,12 @@
-/*
- * @author David Velez and Harry Staley
- */
+import java.util.Comparator;
+import java.util.List;
 
-import java.util.*;
+public class SJF implements Algorithm {
 
-public class FCFS implements Algorithm {
-
+    final int HEAD = 0;
     List<Task> tasks;
-    Queue<Task> queuedTasks;
 
-    public FCFS(List<Task> tasks) {
+    public SJF (List<Task> tasks) {
         this.tasks = tasks;
     }
 
@@ -22,29 +19,26 @@ public class FCFS implements Algorithm {
         // Current task
         Task current = null;
 
-        // Create CPU Runner
+        // Create CPU runner
         CPU cpurunner = new CPU();
 
-        // Use queue to setup priority
-        queuedTasks = new LinkedList<>();
+        // Sort by task burst
+        tasks.sort(Comparator.comparing(t -> t.getBurst()));
 
-        // Queue up tasks in order
-        for (Task task : tasks) {
-            queuedTasks.add(task);
-        }
-
-        // Pick Next Task and run them
-        for (int i = 0; i < queuedTasks.size(); ) {
+        // Run tasks
+        for (int i = 0; i < tasks.size(); ) {
             current = pickNextTask();
             cpurunner.run(current, slice += current.getBurst());
             Thread.sleep(current.getBurst());
             System.out.println("Task " + current.getName() + " finished.\n");
-            queuedTasks.remove();
+            tasks.remove(HEAD);
         }
+
+        System.out.println("SLICE: " + slice);
     }
 
     @Override
     public Task pickNextTask() {
-        return queuedTasks.peek();
+        return tasks.get(HEAD);
     }
 }

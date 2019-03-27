@@ -46,13 +46,13 @@ public class Driver
             case "FCFS":
                 scheduler = new FCFS(queue);
                 break;
-            /*case "SJF":
+            case "SJF":
                 scheduler = new SJF(queue);
                 break;
             case "PRI":
                 scheduler = new Priority(queue);
                 break;
-            case "RR":
+            /*case "RR":
                 scheduler = new RR(queue);
                 break;
             case "PRI-RR":
