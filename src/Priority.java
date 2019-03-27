@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Priority implements Algorithm {
 
-    final int HEAD = 0;
-    List<Task> tasks;
+    private final int HEAD = 0;
+    private List<Task> tasks;
 
     public Priority (List<Task> tasks) {
         this.tasks = tasks;

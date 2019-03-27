@@ -6,8 +6,8 @@ import java.util.*;
 
 public class FCFS implements Algorithm {
 
-    List<Task> tasks;
-    Queue<Task> queuedTasks;
+    private List<Task> tasks;
+    private Queue<Task> queuedTasks;
 
     public FCFS(List<Task> tasks) {
         this.tasks = tasks;

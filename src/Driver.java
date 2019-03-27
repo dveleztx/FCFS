@@ -52,10 +52,10 @@ public class Driver
             case "PRI":
                 scheduler = new Priority(queue);
                 break;
-            /*case "RR":
+            case "RR":
                 scheduler = new RR(queue);
                 break;
-            case "PRI-RR":
+            /*case "PRI-RR":
                 scheduler = new PriorityRR(queue);
                 break;*/
             default:

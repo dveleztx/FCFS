@@ -3,8 +3,8 @@ import java.util.List;
 
 public class SJF implements Algorithm {
 
-    final int HEAD = 0;
-    List<Task> tasks;
+    private final int HEAD = 0;
+    private List<Task> tasks;
 
     public SJF (List<Task> tasks) {
         this.tasks = tasks;
