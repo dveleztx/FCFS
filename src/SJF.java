@@ -1,3 +1,7 @@
+/*
+ * @author David Velez and Harry Staley
+ */
+
 import java.util.Comparator;
 import java.util.List;
 

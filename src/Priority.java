@@ -1,4 +1,7 @@
-import java.util.Collections;
+/*
+ * @author David Velez and Harry Staley
+ */
+
 import java.util.Comparator;
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class Priority implements Algorithm {
         // Sort by task priority
         tasks.sort(Comparator.comparing(t -> t.getPriority()));
 
+        // Priority logic
         for (int i = 0; i < tasks.size(); ) {
             current = pickNextTask();
             cpurunner.run(current, slice += current.getBurst());

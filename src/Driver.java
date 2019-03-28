@@ -55,9 +55,9 @@ public class Driver
             case "RR":
                 scheduler = new RR(queue);
                 break;
-            /*case "PRI-RR":
+            case "PRI-RR":
                 scheduler = new PriorityRR(queue);
-                break;*/
+                break;
             default:
                 System.err.println("Invalid algorithm");
                 System.exit(0);
