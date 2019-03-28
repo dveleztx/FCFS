@@ -33,6 +33,9 @@ public class FCFS implements Algorithm {
             queuedTasks.add(task);
         }
 
+        // Print Algo being used
+        System.out.println("\nFCFS Scheduling\n");
+
         // Pick Next Task and run them
         for (int i = 0; i < queuedTasks.size(); ) {
             current = pickNextTask();

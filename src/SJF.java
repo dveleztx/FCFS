@@ -29,6 +29,9 @@ public class SJF implements Algorithm {
         // Sort by task burst
         tasks.sort(Comparator.comparing(t -> t.getBurst()));
 
+        // Print Algo being used
+        System.out.println("\nSJF Scheduling\n");
+
         // Run tasks
         for (int i = 0; i < tasks.size(); ) {
             current = pickNextTask();

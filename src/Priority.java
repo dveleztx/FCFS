@@ -29,6 +29,9 @@ public class Priority implements Algorithm {
         // Sort by task priority
         tasks.sort(Comparator.comparing(t -> t.getPriority()));
 
+        // Print Algo being used
+        System.out.println("\nPriority Scheduling\n");
+
         // Priority logic
         for (int i = 0; i < tasks.size(); ) {
             current = pickNextTask();

@@ -23,6 +23,9 @@ public class RR implements Algorithm {
         // Create CPU runner
         CPU cpurunner = new CPU();
 
+        // Print Algo being used
+        System.out.println("\nRound Robin Scheduling\n");
+
         for (index = 0; index < tasks.size(); index++) {
 
             current = pickNextTask();
